@@ -24,12 +24,9 @@ class MemoryGame {
     this.pickedCards = [];
   }
 
-  checkIfPair(card1, card2) {
+  checkIfPair(card1Name, card2Name) {
     this.pairsClicked++;
-    if (
-      card1.getAttribute("data-card-name") ===
-      card2.getAttribute("data-card-name")
-    ) {
+    if (card1Name === card2Name) {
       this.pairsGuessed++;
       return true;
     }

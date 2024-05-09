@@ -53,8 +53,8 @@ window.addEventListener("load", (event) => {
       }
       if (
         memoryGame.checkIfPair(
-          memoryGame.pickedCards[0],
-          memoryGame.pickedCards[1]
+          memoryGame.pickedCards[0].getAttribute("data-card-name"),
+          memoryGame.pickedCards[1].getAttribute("data-card-name")
         )
       ) {
         memoryGame.pickedCards.forEach((card) => {

@@ -16,10 +16,20 @@ class MemoryGame {
     }
   }
 
-  checkIfPair(card1Name, card2Name) {
-    this.pickedCards.push(card1Name, card2Name);
+  addPickedCard(cardName) {
+    this.pickedCards.push(cardName);
+  }
+
+  clearPickedCards() {
+    this.pickedCards = [];
+  }
+
+  checkIfPair(card1, card2) {
     this.pairsClicked++;
-    if (card1Name === card2Name) {
+    if (
+      card1.getAttribute("data-card-name") ===
+      card2.getAttribute("data-card-name")
+    ) {
       this.pairsGuessed++;
       return true;
     }

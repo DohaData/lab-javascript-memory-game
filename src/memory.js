@@ -4,11 +4,9 @@ class MemoryGame {
     this.pickedCards = [];
     this.pairsClicked = 0;
     this.pairsGuessed = 0;
-    // add the rest of the class properties here
   }
 
   shuffleCards() {
-    // ... write your code here
     if (!this.cards) {
       return undefined;
     }
@@ -18,24 +16,17 @@ class MemoryGame {
     }
   }
 
-  checkIfPair(card1, card2) {
-    // ... write your code here
-    this.pickedCards.push(card1, card2);
+  checkIfPair(card1Name, card2Name) {
+    this.pickedCards.push(card1Name, card2Name);
     this.pairsClicked++;
-    if (card1 === card2) {
+    if (card1Name === card2Name) {
       this.pairsGuessed++;
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 
   checkIfFinished() {
-    // ... write your code here
-    if (this.pairsGuessed === this.cards.length / 2) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.pairsGuessed === this.cards.length / 2;
   }
 }

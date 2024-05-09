@@ -45,17 +45,12 @@ window.addEventListener('load', (event) => {
   let turnedCards = [];
   document.querySelectorAll('.card').forEach((card) => {
     card.addEventListener('click', () => {
-      // TODO: write some code here
-      // display card clicked
       card.classList.add('turned');
-      console.log(`Card clicked: ${card}`);
       turnedCards.push(card);
       if (turnedCards.length === 2) {
-        const card1 = turnedCards[0].getAttribute('data-card-name');
-        const card2 = turnedCards[1].getAttribute('data-card-name');
-        console.log(`Card 1: ${card1}`);
-        console.log(`Card 2: ${card2}`);
-        if (memoryGame.checkIfPair(card1, card2)) {
+        const card1Name = turnedCards[0].getAttribute('data-card-name');
+        const card2Nmae = turnedCards[1].getAttribute('data-card-name');
+        if (memoryGame.checkIfPair(card1Name, card2Nmae)) {
           turnedCards = [];
           if (memoryGame.checkIfFinished()) {
             alert('You won!');

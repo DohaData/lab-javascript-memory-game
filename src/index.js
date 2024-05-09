@@ -49,8 +49,8 @@ window.addEventListener('load', (event) => {
       turnedCards.push(card);
       if (turnedCards.length === 2) {
         const card1Name = turnedCards[0].getAttribute('data-card-name');
-        const card2Nmae = turnedCards[1].getAttribute('data-card-name');
-        if (memoryGame.checkIfPair(card1Name, card2Nmae)) {
+        const card2Name = turnedCards[1].getAttribute('data-card-name');
+        if (memoryGame.checkIfPair(card1Name, card2Name)) {
           turnedCards = [];
           if (memoryGame.checkIfFinished()) {
             alert('You won!');

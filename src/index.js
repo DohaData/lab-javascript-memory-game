@@ -52,6 +52,9 @@ window.addEventListener('load', (event) => {
         const card2Name = turnedCards[1].getAttribute('data-card-name');
         if (memoryGame.checkIfPair(card1Name, card2Name)) {
           turnedCards = [];
+          turnedCards.forEach((card) => {
+            card.classList.add('blocked');
+          });
           if (memoryGame.checkIfFinished()) {
             alert('You won!');
           }
